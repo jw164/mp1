@@ -45,3 +45,8 @@ img{max-width:100%;height:auto;display:block}
 .site-footer{border-top:1px solid rgba(0,0,0,.08);padding:24px 0;color:$muted;text-align:center}
 
 @media (max-width:768px){.nav{height:64px}.section{padding:56px 0}.columns{columns:1}}
+.site-header.shrink {
+  .nav { height: 64px; }
+  nav a { font-size: 0.95rem; }
+}
+
