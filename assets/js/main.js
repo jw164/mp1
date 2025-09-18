@@ -5,12 +5,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
 (() => {
   const header = document.querySelector('.site-header');
+  const onScroll = () => {
+    if (window.scrollY > 8) header.classList.add('shrink');
+    else header.classList.remove('shrink');
+  };
+  onScroll();
+  window.addEventListener('scroll', onScroll);
+})();
+
+(() => {
   const links = [...document.querySelectorAll('.nav a[href^="#"]')];
   const sections = [...document.querySelectorAll('section[id]')];
-
-  window.addEventListener('scroll', () => {
-    header.style.height = window.scrollY > 8 ? '64px' : '80px';
-  });
+  if (!links.length || !sections.length) return;
 
   const byId = (id) => links.find(a => a.getAttribute('href') === `#${id}`);
   const io = new IntersectionObserver((entries) => {
@@ -24,6 +30,17 @@ document.addEventListener('DOMContentLoaded', () => {
   }, { rootMargin: '-80px 0px -50% 0px', threshold: [0.25,0.5,0.75] });
 
   sections.forEach(s=>io.observe(s));
+
+  const lastLink = links[links.length - 1];
+  const checkBottom = () => {
+    const nearBottom = window.innerHeight + window.scrollY >= document.body.offsetHeight - 2;
+    if (nearBottom) {
+      links.forEach(a => a.classList.remove('active'));
+      lastLink?.classList.add('active');
+    }
+  };
+  window.addEventListener('scroll', checkBottom);
+  checkBottom();
 })();
 
 (() => {
@@ -33,24 +50,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const next = document.querySelector('.slider-btn.next');
   const total = track.children.length;
   let index = 0;
-  function go(i){
+  const go = (i) => {
     index = (i + total) % total;
     track.style.transform = `translateX(-${index * 100}%)`;
-  }
-  prev?.addEventListener('click', ()=>go(index-1));
-  next?.addEventListener('click', ()=>go(index+1));
-})();
+  };
+  prev?.addEventListener('click', ()=>go(index-1
 
-(() => {
-  const openBtn = document.querySelector('[data-open-modal]');
-  const modal = document.querySelector('#demo-modal');
-  const closeBtn = document.querySelector('[data-close-modal]');
-  if (!openBtn || !modal) return;
-
-  function open() { modal.hidden = false; document.body.style.overflow='hidden'; closeBtn?.focus(); }
-  function close(){ modal.hidden = true; document.body.style.overflow=''; }
-  openBtn.addEventListener('click', open);
-  closeBtn?.addEventListener('click', close);
-  modal.addEventListener('click', (e)=>{ if(e.target === modal) close(); });
-  document.addEventListener('keydown', (e)=>{ if(e.key === 'Escape' && !modal.hidden) close(); });
-})();
