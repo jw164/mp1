@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MP1 Demo</title>
+  <meta name="description" content="CS409 MP1 minimal starting page" />
+  <style>
+    :root{
+      --bg: #ffffff;
+      --fg: #1b1f23;
+      --muted: #6a737d;
+      --accent: #2f81f7;
+      --maxw: 960px;
+      --radius: 12px;
+      --gap: 24px;
+    }
+    @media (prefers-color-scheme: dark){
+      :root{
+        --bg:#0d1117;
+        --fg:#e6edf3;
+        --muted:#8b949e;
+        --accent:#58a6ff;
+      }
+    }
+    *,*::before,*::after{ box-sizing: border-box; }
+    html:focus-within{ scroll-behavior:smooth; }
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      line-height:1.6;
+      color:var(--fg);
+      background:var(--bg);
+      text-rendering: optimizeLegibility;
+    }
+    img{ max-width:100%; height:auto; display:block; }
+    .container{ max-width: var(--maxw); margin: 0 auto; padding: 0 16px; }
+    header.site-header{
+      position: sticky; top: 0; z-index: 10;
+      backdrop-filter: blur(6px);
+      background: color-mix(in oklab, var(--bg) 85%, transparent);
+      border-bottom: 1px solid color-mix(in oklab, var(--fg) 10%, transparent);
+    }
+    .nav{
+      display:flex; align-items:center; justify-content:space-between;
+      height: 64px;
+    }
+    .brand{ font-weight:700; letter-spacing:.2px; }
+    .brand a{ color: var(--fg); text-decoration:none; }
+    .nav a:hover{ color: var(--accent); }
+    .hero{
+      min-height: 70vh;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      padding: 48px 0;
+    }
+    .hero-card{
+      border: 1px solid color-mix(in oklab, var(--fg) 10%, transparent);
+      border-radius: var(--radius);
+      padding: 32px;
+      box-shadow: 0 10px 30px rgba(0,0,0,.04);
+      background: color-mix(in oklab, var(--bg) 96%, transparent);
+      max-width: 720px;
+    }
+    .hero h1{ margin: 0 0 8px; font-size: clamp(28px, 4vw, 40px); }
+    .hero p{ margin:0 0 20px; color:var(--muted); }
+    .btn{
+      display:inline-block;
+      padding:12px 18px;
+      border-radius: 999px;
+      background: var(--accent);
+      color: #fff; text-decoration:none; font-weight:600;
+      transition: transform .15s ease, box-shadow .15s ease;
+    }
+    .btn:focus-visible{ outline: 3px solid color-mix(in oklab, var(--accent) 60%, #fff); outline-offset: 2px; }
+    .btn:hover{ transform: translateY(-1px); box-shadow: 0 6px 16px rgba(0,0,0,.12); }
+    .demo-img{
+      margin-top: var(--gap);
+      border-radius: var(--radius);
+      overflow:hidden;
+    }
+    footer{
+      border-top: 1px solid color-mix(in oklab, var(--fg) 10%, transparent);
+      margin-top: 56px;
+      padding: 20px 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+    @media (prefers-reduced-motion: reduce){
+      html:focus-within{ scroll-behavior: auto; }
+      .btn{ transition: none; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header" role="banner">
+    <div class="container nav" aria-label="Primary">
+      <div class="brand"><a href="#">MP1</a></div>
+      <nav>
+        <a href="#main" style="text-decoration:none;color:var(--muted)">Skip to content</a>
+      </nav>
+    </div>
+  </header>
+  <main id="main" class="container">
+    <section class="hero" aria-labelledby="title">
+      <div class="hero-card">
+        <h1 id="title">Hello World! Welcome to MP1!</h1>
+        <p>This is a minimal, standards-compliant starting page for your assignment.</p>
+        <a class="btn" href="https://github.com/jw164/mp1" target="_blank" rel="noopener">View Repository</a>
+        <figure class="demo-img">
+          <img
+            src="https://picsum.photos/1200/600"
+            alt="Sample landscape placeholder"
+            loading="lazy"
+            width="1200" height="600">
+          <figcaption style="color:var(--muted); font-size:14px; padding:8px 0 0;">
+            Image placeholder from picsum.photos (lazy loaded).
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+  </main>
+  <footer class="container" role="contentinfo">
+    © <span id="y"></span> MP1 · Built without inline styles or libraries.
+  </footer>
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
