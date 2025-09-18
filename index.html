@@ -12,7 +12,7 @@
 
   <header class="site-header" role="banner">
     <div class="container nav">
-      <a class="brand" href="#">MP1</a>
+      <a class="brand" href="#" aria-label="Home">MP1</a>
       <nav aria-label="Primary">
         <a href="#hero">Home</a>
         <a href="#about">About</a>
@@ -21,6 +21,7 @@
         <a href="#contact">Contact</a>
       </nav>
     </div>
+    <div class="progress-bar" id="progressBar" aria-hidden="true"></div>
   </header>
 
   <main id="main">
@@ -30,3 +31,85 @@
         <p class="lead">Clean starter you can extend to meet every rubric item.</p>
         <a class="btn" href="https://github.com/jw164/mp1" target="_blank" rel="noopener">View Repo</a>
       </div>
+    </section>
+
+    <section id="about" class="section">
+      <div class="container">
+        <h2 class="section-title">About</h2>
+        <div class="columns">
+          <p>Column A: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione, illum.</p>
+          <p>Column B: Eligendi, ducimus! Quidem, excepturi. Expedita, tempora? Magnam dicta rem.</p>
+          <p>Column C: Architecto, recusandae. Repellat iusto ex autem laudantium animi explicabo.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section parallax" aria-label="Scenic background"></section>
+
+    <section id="carousel" class="section">
+      <div class="container">
+        <h2 class="section-title">Carousel</h2>
+        <div class="slider" aria-roledescription="carousel" tabindex="0">
+          <button class="slider-btn prev" aria-label="Previous slide">‹</button>
+          <div class="slides">
+            <figure class="slide"><img src="https://picsum.photos/seed/a/1200/600" alt="Slide A"></figure>
+            <figure class="slide"><img src="https://picsum.photos/seed/b/1200/600" alt="Slide B"></figure>
+            <figure class="slide"><img src="https://picsum.photos/seed/c/1200/600" alt="Slide C"></figure>
+          </div>
+          <button class="slider-btn next" aria-label="Next slide">›</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">Modal</h2>
+        <button class="btn" data-open-modal="#demo-modal">Open Modal</button>
+      </div>
+    </section>
+
+    <div id="demo-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" hidden>
+      <div class="dialog" role="document">
+        <button class="close" data-close-modal aria-label="Close">×</button>
+        <h3 id="modal-title">Hello from the Modal</h3>
+        <p>This is a simple, accessible modal window.</p>
+      </div>
+    </div>
+
+    <section id="video" class="section">
+      <div class="container">
+        <h2 class="section-title">Video</h2>
+        <video class="video" controls playsinline preload="metadata"
+               poster="https://picsum.photos/seed/poster/960/540">
+          <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <div class="container">
+        <h2 class="section-title">Contact</h2>
+        <ul class="social">
+          <li><a href="#" aria-label="GitHub">
+            <svg viewBox="0 0 24 24" class="icon"><path d="M12 .5a11.5 11.5 0 0 0-3.64 22.41c.58.11.79-.25.79-.56 0-.27-.01-1.16-.02-2.1-3.2.7-3.88-1.37-3.88-1.37-.53-1.34-1.3-1.7-1.3-1.7-1.06-.73.08-.72.08-.72 1.18.08 1.81 1.22 1.81 1.22 1.04 1.78 2.72 1.27 3.39.97.11-.76.41-1.27.74-1.56-2.55-.29-5.23-1.28-5.23-5.71 0-1.26.45-2.29 1.2-3.1-.12-.29-.52-1.46.11-3.04 0 0 .98-.31 3.2 1.18a11.1 11.1 0 0 1 5.83 0c2.22-1.49 3.2-1.18 3.2-1.18.63 1.58.23 2.75.11 3.04.75.81 1.2 1.84 1.2 3.1 0 4.44-2.68 5.41-5.24 5.7.42.36.79 1.07.79 2.16 0 1.56-.01 2.82-.01 3.2 0 .31.21.68.8.56A11.5 11.5 0 0 0 12 .5z"/></svg>
+          </a></li>
+          <li><a href="#" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" class="icon"><path d="M4.98 3.5A2.5 2.5 0 1 1 5 8.5 2.5 2.5 0 0 1 4.98 3.5zM3 9h4v12H3zm7 0h3.8v1.7h.05c.53-.95 1.83-1.95 3.77-1.95 4.03 0 4.77 2.65 4.77 6.1V21H18v-4.9c0-1.17-.02-2.67-1.63-2.67-1.64 0-1.89 1.28-1.89 2.58V21H10z"/></svg>
+          </a></li>
+          <li><a href="#" aria-label="X/Twitter">
+            <svg viewBox="0 0 24 24" class="icon"><path d="M18.244 2H21l-6.45 7.37L22 22h-6.9l-4.54-5.94L4.6 22H2l6.93-7.92L2 2h6.9l4.12 5.39L18.244 2Zm-2.42 18h1.34L8.27 4H6.86l8.964 16Z"/></svg>
+          </a></li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">© <span id="y"></span> MP1</div>
+  </footer>
+
+  <script src="assets/js/main.js" defer></script>
+</body>
+</html>
+
