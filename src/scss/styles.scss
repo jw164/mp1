@@ -1,0 +1,47 @@
+$bg:#ffffff;$fg:#1b1f23;$muted:#6a737d;$accent:#2f81f7;$maxw:1200px;$radius:14px;
+
+@mixin container{max-width:$maxw;margin:0 auto;padding:0 20px;}
+@mixin btn{display:inline-block;background:$accent;color:#fff;padding:12px 18px;border-radius:999px;text-decoration:none;font-weight:700;transition:transform .15s ease,box-shadow .15s ease;&:hover{transform:translateY(-1px);box-shadow:0 6px 16px rgba(0,0,0,.12);}}
+
+*,*::before,*::after{box-sizing:border-box}
+html:focus-within{scroll-behavior:smooth}
+body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,"Apple Color Emoji","Segoe UI Emoji";line-height:1.6;color:$fg;background:$bg}
+img{max-width:100%;height:auto;display:block}
+
+.skip-link{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden}
+.skip-link:focus{left:12px;top:12px;width:auto;height:auto;background:#000;color:#fff;padding:8px 12px;border-radius:8px;z-index:10000}
+
+.container{@include container}
+.site-header{position:sticky;top:0;z-index:10;border-bottom:1px solid rgba(0,0,0,.08);backdrop-filter:blur(6px);background:rgba(255,255,255,.85);transition:all .25s ease}
+.nav{display:flex;align-items:center;justify-content:space-between;height:80px;
+  a{color:$fg;text-decoration:none;margin-left:18px;&:hover,&.active{color:$accent}}
+}
+.brand{font-weight:800;letter-spacing:.2px}
+
+.section{padding:72px 0}
+.section-title{margin:0 0 20px;font-size:clamp(22px,3vw,28px)}
+.hero{display:grid;place-items:center;min-height:70vh;
+  &-inner{text-align:center;max-width:800px}
+}
+.lead{color:$muted}
+.btn{@include btn}
+
+.columns{columns:3 280px;column-gap:24px}
+.parallax{min-height:56vh;background:url("https://picsum.photos/1600/900?blur=1") center/cover fixed no-repeat}
+
+.slider{position:relative;overflow:hidden;border-radius:$radius;box-shadow:0 10px 30px rgba(0,0,0,.05)}
+.slides{display:flex;transition:transform .4s ease}
+.slide{min-width:100%}
+.slider-btn{position:absolute;top:50%;transform:translateY(-50%);border:0;background:rgba(0,0,0,.4);color:#fff;width:44px;height:44px;border-radius:50%;cursor:pointer;&:hover{background:rgba(0,0,0,.55)}&.prev{left:12px}&.next{right:12px}}
+
+.modal[hidden]{display:none}
+.modal{position:fixed;inset:0;background:rgba(0,0,0,.45);display:grid;place-items:center;padding:20px}
+.dialog{background:#fff;color:#000;border-radius:$radius;padding:24px;max-width:560px;width:min(92vw,560px);position:relative}
+.close{position:absolute;right:10px;top:8px;border:0;background:transparent;font-size:28px;cursor:pointer}
+
+.video{width:100%;max-width:960px;border-radius:$radius;border:1px solid rgba(0,0,0,.08)}
+.social{display:flex;gap:16px;list-style:none;padding:0;margin:8px 0 0}
+.icon{width:24px;height:24px;fill:currentColor}
+.site-footer{border-top:1px solid rgba(0,0,0,.08);padding:24px 0;color:$muted;text-align:center}
+
+@media (max-width:768px){.nav{height:64px}.section{padding:56px 0}.columns{columns:1}}
