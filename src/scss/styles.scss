@@ -1,16 +1,12 @@
-$bg:#ffffff;$fg:#1b1f23;$muted:#6a737d;$accent:#2f81f7;$maxw:1200px;$radius:14px;
-
+$bg:#f8f5f2;$fg:#2b2118;$muted:#7a6a5a;$accent:#8b5e3c;$maxw:1200px;$radius:14px;
 @mixin container{max-width:$maxw;margin:0 auto;padding:0 20px;}
 @mixin btn{display:inline-block;background:$accent;color:#fff;padding:12px 18px;border-radius:999px;text-decoration:none;font-weight:700;transition:transform .15s ease,box-shadow .15s ease;&:hover{transform:translateY(-1px);box-shadow:0 6px 16px rgba(0,0,0,.12)}}
-
 *,*::before,*::after{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,"Apple Color Emoji","Segoe UI Emoji";line-height:1.6;color:$fg;background:$bg}
 img{max-width:100%;height:auto;display:block}
-
 .skip-link{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden}
 .skip-link:focus{left:12px;top:12px;width:auto;height:auto;background:#000;color:#fff;padding:8px 12px;border-radius:8px;z-index:10000}
-
 .container{@include container}
 .site-header{position:sticky;top:0;z-index:10;border-bottom:1px solid rgba(0,0,0,.08);backdrop-filter:blur(6px);background:rgba(255,255,255,.85);transition:all .25s ease;box-shadow:0 0 0 rgba(0,0,0,0)}
 .nav{display:flex;align-items:center;justify-content:space-between;height:80px}
@@ -18,21 +14,16 @@ nav a{color:$fg;text-decoration:none;margin-left:18px;transition:color .15s ease
 nav a:hover,nav a.active{color:$accent}
 nav a::after{content:"";position:absolute;left:0;bottom:0;width:0;height:2px;background:$accent;transition:width .2s ease}
 nav a:hover::after,nav a.active::after{width:100%}
-
 .progress-bar{position:absolute;left:0;bottom:0;height:3px;width:0;background:$accent;transition:width .1s linear}
-
 .brand{font-weight:800;letter-spacing:.2px}
-
 .section{padding:72px 0}
 .section-title{margin:0 0 20px;font-size:clamp(22px,3vw,28px)}
 .hero{display:grid;place-items:center;min-height:70vh}
 .hero-inner{text-align:center;max-width:800px}
 .lead{color:$muted}
 .btn{@include btn}
-
 .columns{columns:3 280px;column-gap:24px}
-.parallax{min-height:56vh;background:url("https://picsum.photos/1600/900?blur=1") center/cover fixed no-repeat;border-top:1px solid rgba(0,0,0,.06);border-bottom:1px solid rgba(0,0,0,.06)}
-
+.parallax{min-height:56vh;background:url("https://picsum.photos/seed/coffee/1600/900?blur=1") center/cover fixed no-repeat;border-top:1px solid rgba(0,0,0,.06);border-bottom:1px solid rgba(0,0,0,.06)}
 .slider{position:relative;overflow:hidden;border-radius:$radius;box-shadow:0 10px 30px rgba(0,0,0,.05)}
 .slides{display:flex;transition:transform .4s ease}
 .slide{min-width:100%}
@@ -41,34 +32,30 @@ nav a:hover::after,nav a.active::after{width:100%}
 .slider-btn:hover{background:rgba(0,0,0,.55)}
 .slider-btn.prev{left:12px}
 .slider-btn.next{right:12px}
-
 .modal[hidden]{display:none}
 .modal{position:fixed;inset:0;background:rgba(0,0,0,.45);display:grid;place-items:center;padding:20px;opacity:1;transition:opacity .18s ease}
 .modal[hidden]{display:block;opacity:0;pointer-events:none}
 .dialog{background:#fff;color:#000;border-radius:$radius;padding:24px;max-width:560px;width:min(92vw,560px);position:relative}
 .close{position:absolute;right:10px;top:8px;border:0;background:transparent;font-size:28px;cursor:pointer}
-
+.input{width:100%;padding:10px;border:1px solid #ddd;border-radius:8px}
 .video{width:100%;max-width:960px;border-radius:$radius;border:1px solid rgba(0,0,0,.08)}
 .social{display:flex;gap:16px;list-style:none;padding:0;margin:8px 0 0}
 .icon{width:24px;height:24px;fill:currentColor}
 .site-footer{border-top:1px solid rgba(0,0,0,.08);padding:24px 0;color:$muted;text-align:center}
-
 .site-header.shrink{backdrop-filter:blur(8px);background:rgba(255,255,255,.92);box-shadow:0 4px 18px rgba(0,0,0,.06)}
 .site-header.shrink .nav{height:64px}
 .site-header.shrink nav a{font-size:.95rem}
-
 @keyframes fadeUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
 .reveal{opacity:0;transform:translateY(12px)}
 .reveal.is-visible{animation:fadeUp .6s ease both}
-
 @media (max-width:768px){
   .nav{height:64px}
   .section{padding:56px 0}
   .columns{columns:1}
 }
-
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
   .btn,.slides{transition:none}
   .reveal{opacity:1;transform:none;animation:none}
 }
+
