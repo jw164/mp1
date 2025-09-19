@@ -4,7 +4,7 @@ $bg:#ffffff;$fg:#1b1f23;$muted:#6a737d;$accent:#2f81f7;$maxw:1200px;$radius:14px
 
 *,*::before,*::after{box-sizing:border-box}
 html{scroll-behavior:smooth;scroll-padding-top:96px}
-body{margin:0;font-family:"Inter",system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,"Apple Color Emoji","Segoe UI Emoji";line-height:1.6;color:$fg;background:$bg}
+body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,"Apple Color Emoji","Segoe UI Emoji";line-height:1.6;color:$fg;background:$bg}
 img{max-width:100%;height:auto;display:block}
 
 .skip-link{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden}
@@ -50,7 +50,8 @@ nav a:hover,nav a.active{color:$accent}
 .video{width:100%;max-width:960px;border-radius:$radius;border:1px solid rgba(0,0,0,.08);box-shadow:0 10px 30px rgba(0,0,0,.05);display:block;margin:0 auto}
 
 .social{display:flex;gap:16px;list-style:none;padding:0;margin:8px 0 0}
-.social a{color:$fg;font-size:22px}
+.icon{width:24px;height:24px;fill:currentColor;display:block}
+.social a{color:$fg}
 .social a:hover{color:$accent}
 
 .site-footer{border-top:1px solid rgba(0,0,0,.08);padding:24px 0;color:$muted;text-align:center}
@@ -64,4 +65,5 @@ nav a:hover,nav a.active{color:$accent}
   .section{padding:56px 0}
   .columns{columns:1}
 }
+
 
