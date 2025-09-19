@@ -1,70 +1,74 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Cube Meter Coffee (Chicago)</title>
-  <meta name="description" content="Cube Meter Coffee · A cozy cubic meter in the city · Chicago">
-  <link rel="stylesheet" href="assets/css/styles.css" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cubic³ Coffee | Chicago</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <link href="assets/css/styles.css" rel="stylesheet">
+  <script src="assets/js/main.js" defer></script>
 </head>
 <body>
-  <a class="skip-link" href="#main">Skip to content</a>
+  <a class="skip-link" href="#hero">Skip to content</a>
 
-  <header class="site-header" role="banner">
+  <header class="site-header">
     <div class="container nav">
-      <a class="brand" href="#" aria-label="Home">Cube Meter Coffee</a>
-      <nav aria-label="Primary navigation">
+      <a class="brand" href="#hero">(m)³ Coffee</a>
+      <nav aria-label="Primary">
         <a href="#hero">Home</a>
-        <a href="#about">Menu</a>
+        <a href="#about">About</a>
+        <a href="#menu">Menu</a>
         <a href="#carousel">Gallery</a>
         <a href="#video">Video</a>
         <a href="#contact">Contact</a>
       </nav>
     </div>
-    <div class="progress-bar" id="progressBar" aria-hidden="true"></div>
   </header>
 
-  <main id="main">
-    <!-- Hero -->
+  <main>
     <section id="hero" class="section hero">
-      <div class="container hero-inner">
-        <h1>Cube Meter Coffee — your cozy third place</h1>
-        <p class="lead">Specialty blends, handmade pastries, and a calm corner. Drop in for a cup.</p>
-        <p>
-          <a class="btn" href="#about">View Menu</a>
-          <a class="btn" href="javascript:void(0)" data-open-modal="#demo-modal">Book a Visit</a>
-        </p>
+      <div class="hero-inner container">
+        <h1 class="section-title">Cubic³ Coffee · Chicago</h1>
+        <p class="lead">Bright, clean, balanced coffee. From bean to cup.</p>
+        <a class="btn" href="#menu">Order Now</a>
+        <img src="assets/img/minibus.jpg" alt="Coffee Minibus" class="hero-img">
       </div>
     </section>
-
 
     <section id="about" class="section">
       <div class="container">
-        <h2 class="section-title">Popular Menu (USD)</h2>
-        <div class="columns">
-          <p><strong>Espresso & Americano</strong><br>
-            Espresso (single) $2.50<br>
-            Espresso (double) $2.95<br>
-            Americano $2.95
-          </p>
-          <p><strong>Milk Coffee</strong><br>
-            Latte $3.25<br>
-            Cappuccino $3.25<br>
-            Caramel Macchiato $3.25
-          </p>
-          <p><strong>Hand Brew & Sweets</strong><br>
-            Pour-over $3.25<br>
-            Basque Cheesecake $3.00<br>
-            Croissant $2.75
-          </p>
-        </div>
-        <p class="lead">Note: prices target the ~$3 range.</p>
+        <h2 class="section-title">About</h2>
+        <p>Cubic³ Coffee is a minimal coffee stand focused on quality and speed. Beans are roasted fresh and extracted on precision equipment. We serve classic espresso and fruit-forward signatures around three dollars.</p>
       </div>
     </section>
 
+    <section class="parallax section">
+      <div class="container center-stack">
+        <h3 class="quote">from bean to cup</h3>
+      </div>
+    </section>
 
-    <section class="section parallax" aria-label="Coffee beans background"></section>
-
+    <section id="menu" class="section">
+      <div class="container">
+        <h2 class="section-title">Menu</h2>
+        <div class="columns">
+          <p>Espresso $2.80</p>
+          <p>Americano $3.00</p>
+          <p>Latte $3.40</p>
+          <p>Mocha $3.50</p>
+          <p>Peach Black Tea $3.20</p>
+          <p>Lemon Americano $3.20</p>
+          <p>Cold Brew $3.30</p>
+          <p>Milk Tea $3.00</p>
+          <p>Matcha Latte $3.50</p>
+          <p>Chocolate $3.00</p>
+        </div>
+        <div class="cta-wrap">
+          <button class="btn" data-open="modal-hours">Store Hours</button>
+        </div>
+      </div>
+    </section>
 
     <section id="carousel" class="section">
       <div class="container">
@@ -72,73 +76,52 @@
         <div class="slider" aria-roledescription="carousel" tabindex="0">
           <button class="slider-btn prev" aria-label="Previous slide">‹</button>
           <div class="slides">
-            <figure class="slide"><img src="https://picsum.photos/seed/coffee1/1200/600" alt="Bar and espresso machine"></figure>
-            <figure class="slide"><img src="https://picsum.photos/seed/coffee2/1200/600" alt="Window seating"></figure>
-            <figure class="slide"><img src="https://picsum.photos/seed/coffee3/1200/600" alt="Cozy interior view"></figure>
+            <figure class="slide"><img src="assets/img/drinks.jpg"   alt="Signature drinks lineup"></figure>
+            <figure class="slide"><img src="assets/img/branding.jpg" alt="Branding set"></figure>
+            <figure class="slide"><img src="assets/img/handoff.jpg"  alt="Handing a cup"></figure>
           </div>
           <button class="slider-btn next" aria-label="Next slide">›</button>
         </div>
       </div>
     </section>
 
- 
-    <section class="section">
-      <div class="container">
-        <h2 class="section-title">Book / Franchise Inquiry</h2>
-        <button class="btn" data-open-modal="#demo-modal">Contact Us</button>
-      </div>
-    </section>
-
-
-    <div id="demo-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" hidden>
-      <div class="dialog" role="document">
-        <button class="close" data-close-modal aria-label="Close">×</button>
-        <h3 id="modal-title">Tell us about your request</h3>
-        <p>Please leave your contact and a short note. We’ll get back to you soon.</p>
-        <form class="form">
-          <p><label>Name<br><input class="input" type="text" placeholder="Alex"></label></p>
-          <p><label>Phone<br><input class="input" type="tel" placeholder="0000000000"></label></p>
-          <p><label>Message<br><input class="input" type="text" placeholder="Book a visit / Franchise inquiry"></label></p>
-          <p><button type="button" class="btn" data-close-modal>Send</button></p>
-        </form>
-      </div>
-    </div>
-
-
     <section id="video" class="section">
       <div class="container">
         <h2 class="section-title">A Coffee Journey</h2>
-        <video class="video" controls playsinline preload="metadata" poster="https://picsum.photos/seed/beans/960/540">
-          <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4" type="video/mp4">
+        <video class="video" controls playsinline preload="metadata" poster="assets/img/drinks.jpg">
+          <source src="assets/video/coffee.mp4" type="video/mp4">
           Your browser does not support the video tag.
         </video>
       </div>
     </section>
 
-
     <section id="contact" class="section">
       <div class="container">
         <h2 class="section-title">Contact</h2>
-        <p>Address: Chicago, Illinois · Hours: Mon–Sun 9:00–21:30 · Tel: <a href="tel:0000000000">0000000000</a></p>
+        <p>Address: 233 S Wacker Dr, Chicago, IL</p>
+        <p>Phone: 000-000-0000</p>
         <ul class="social">
-          <li><a href="#" aria-label="GitHub">
-            <svg viewBox="0 0 24 24" class="icon"><path d="M12 .5a11.5 11.5 0 0 0-3.64 22.41c.58.11.79-.25.79-.56 0-.27-.01-1.16-.02-2.1-3.2.7-3.88-1.37-3.88-1.37-.53-1.34-1.3-1.7-1.3-1.7-1.06-.73.08-.72.08-.72 1.18.08 1.81 1.22 1.81 1.22 1.04 1.78 2.72 1.27 3.39.97.11-.76.41-1.27.74-1.56-2.55-.29-5.23-1.28-5.23-5.71 0-1.26.45-2.29 1.2-3.1-.12-.29-.52-1.46.11-3.04 0 0 .98-.31 3.2 1.18a11.1 11.1 0 0 1 5.83 0c2.22-1.49 3.2-1.18 3.2-1.18.63 1.58.23 2.75.11 3.04.75.81 1.2 1.84 1.2 3.1 0 4.44-2.68 5.41-5.24 5.7.42.36.79 1.07.79 2.16 0 1.56-.01 2.82-.01 3.2 0 .31.21.68.8.56A11.5 11.5 0 0 0 12 .5z"/></svg>
-          </a></li>
-          <li><a href="#" aria-label="LinkedIn">
-            <svg viewBox="0 0 24 24" class="icon"><path d="M4.98 3.5A2.5 2.5 0 1 1 5 8.5 2.5 2.5 0 0 1 4.98 3.5zM3 9h4v12H3zm7 0h3.8v1.7h.05c.53-.95 1.83-1.95 3.77-1.95 4.03 0 4.77 2.65 4.77 6.1V21H18v-4.9c0-1.17-.02-2.67-1.63-2.67-1.64 0-1.89 1.28-1.89 2.58V21H10z"/></svg>
-          </a></li>
-          <li><a href="#" aria-label="X">
-            <svg viewBox="0 0 24 24" class="icon"><path d="M18.244 2H21l-6.45 7.37L22 22h-6.9l-4.54-5.94L4.6 22H2l6.93-7.92L2 2h6.9l4.12 5.39L18.244 2Zm-2.42 18h1.34L8.27 4H6.86l8.964 16Z"/></svg>
-          </a></li>
+          <li><a aria-label="Instagram" href="#"><i class="fa-brands fa-instagram"></i></a></li>
+          <li><a aria-label="X" href="#"><i class="fa-brands fa-x-twitter"></i></a></li>
+          <li><a aria-label="TikTok" href="#"><i class="fa-brands fa-tiktok"></i></a></li>
         </ul>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
-    <div class="container">© <span id="y"></span> Cube Meter Coffee · Chicago</div>
+    <div class="container">
+      © <span id="y"></span> Cubic³ Coffee
+    </div>
   </footer>
 
-  <script src="assets/js/main.js" defer></script>
+  <section id="modal-hours" class="modal" hidden>
+    <div class="dialog" role="dialog" aria-modal="true" aria-labelledby="hours-title">
+      <button class="close" data-close aria-label="Close">×</button>
+      <h3 id="hours-title">Store Hours</h3>
+      <p>Mon–Fri 8:00–18:00</p>
+      <p>Sat–Sun 9:00–19:00</p>
+    </div>
+  </section>
 </body>
 </html>
