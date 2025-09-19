@@ -1,10 +1,9 @@
 $bg:#ffffff;$fg:#1b1f23;$muted:#6a737d;$accent:#2f81f7;$maxw:1200px;$radius:14px;
-
 @mixin container{max-width:$maxw;margin:0 auto;padding:0 20px}
 @mixin btn{display:inline-block;background:$accent;color:#fff;padding:12px 18px;border-radius:999px;text-decoration:none;font-weight:700;transition:transform .15s ease,box-shadow .15s ease;&:hover{transform:translateY(-1px);box-shadow:0 6px 16px rgba(0,0,0,.12)}}
 
 *,*::before,*::after{box-sizing:border-box}
-html:focus-within{scroll-behavior:smooth}
+html{scroll-behavior:smooth;scroll-padding-top:96px}
 body{margin:0;font-family:"Inter",system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,"Apple Color Emoji","Segoe UI Emoji";line-height:1.6;color:$fg;background:$bg}
 img{max-width:100%;height:auto;display:block}
 
@@ -55,6 +54,10 @@ nav a:hover,nav a.active{color:$accent}
 .social a:hover{color:$accent}
 
 .site-footer{border-top:1px solid rgba(0,0,0,.08);padding:24px 0;color:$muted;text-align:center}
+
+.about-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:24px;align-items:center}
+.about-grid img{border-radius:$radius;box-shadow:0 10px 30px rgba(0,0,0,.06)}
+@media (max-width:900px){.about-grid{grid-template-columns:1fr}}
 
 @media (max-width:768px){
   .nav{height:64px}
