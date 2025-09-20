@@ -1,129 +1,158 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Cubic³ Coffee | Chicago</title>
-  <meta name="description" content="Bright, clean, balanced coffee. Cubic³ Coffee in Chicago.">
-  <meta property="og:title" content="Cubic³ Coffee | Chicago">
-  <meta property="og:description" content="Bright, clean, balanced coffee.">
-  <meta property="og:type" content="website">
-  <meta property="og:image" content="drinks.jpg">
-  <link href="assets/css/styles.css" rel="stylesheet">
-  <script src="assets/js/main.js" defer></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Café Nimbus</title>
+  <link rel="stylesheet" href="assets/css/styles.css" />
 </head>
 <body>
-  <a class="skip-link" href="#hero">Skip to content</a>
-
-  <header class="site-header">
-    <div class="container nav">
-      <a class="brand" href="#hero" aria-label="Go to Home">Cubic³ Coffee</a>
-      <nav aria-label="Primary">
-        <a href="#hero">Home</a>
-        <a href="#about">About</a>
-        <a href="#menu">Menu</a>
-        <a href="#carousel">Gallery</a>
-        <a href="#video">Video</a>
-        <a href="#contact">Contact</a>
-      </nav>
+  <header id="home" class="section hero">
+    <div class="hero__inner">
+      <h1 class="hero__title animate-fade">Café Nimbus</h1>
+      <p class="hero__tag animate-fade">Small-batch roasts • Handcrafted drinks</p>
+      <div class="hero__cta">
+        <a href="#menu" class="btn">Explore Menu</a>
+        <button class="btn btn--ghost" data-open-modal="hours">Store Hours</button>
+      </div>
     </div>
-    <div class="reading-progress" aria-hidden="true"><span></span></div>
   </header>
 
-  <main>
-    <section id="hero" class="section hero">
-      <div class="hero-inner container">
-        <h1 class="section-title">Cubic³ Coffee · Chicago</h1>
-        <p class="lead">Bright, clean, balanced coffee. From bean to cup.</p>
-        <a class="btn" href="#menu">Order Now</a>
-        <img src="minibus.jpg" alt="Coffee minibus with Cubic³ branding" class="hero-img" loading="eager" decoding="async">
-      </div>
-    </section>
+  <nav id="topnav" class="nav">
+    <div class="nav__inner">
+      <a class="nav__brand" href="#home">Nimbus</a>
+      <ul class="nav__links">
+        <li><a href="#home" data-link>Home</a></li>
+        <li><a href="#about" data-link>About</a></li>
+        <li><a href="#menu" data-link>Menu</a></li>
+        <li><a href="#gallery" data-link>Gallery</a></li>
+        <li><a href="#video" data-link>Video</a></li>
+        <li><a href="#contact" data-link>Contact</a></li>
+      </ul>
+    </div>
+  </nav>
 
-    <section id="about" class="section">
-      <div class="container about-grid">
-        <div>
-          <h2 class="section-title">About</h2>
-          <p>Cubic³ Coffee focuses on bright, clean, balanced cups. Beans are roasted fresh and extracted on precision equipment.</p>
-          <p>We keep things minimal: fast service, clear flavors, and prices around $3.00. Espresso, fruit-forward signatures, and cold brew are our core lineup.</p>
-        </div>
-        <img src="handoff.jpg" alt="Passing a finished drink to the guest" loading="lazy" decoding="async">
-      </div>
-    </section>
-
-    <section class="parallax section">
-      <div class="container center-stack">
-        <h3 class="quote">from bean to cup</h3>
-      </div>
-    </section>
-
-    <section id="menu" class="section">
-      <div class="container">
-        <h2 class="section-title">Menu</h2>
-        <div class="columns">
-          <p>Espresso $2.80</p><p>Americano $3.00</p><p>Latte $3.40</p><p>Mocha $3.50</p>
-          <p>Peach Black Tea $3.20</p><p>Lemon Americano $3.20</p><p>Cold Brew $3.30</p>
-          <p>Milk Tea $3.00</p><p>Matcha Latte $3.50</p><p>Chocolate $3.00</p>
-        </div>
-        <div class="cta-wrap"><button class="btn" data-open="modal-hours">Store Hours</button></div>
-      </div>
-    </section>
-
-    <section id="carousel" class="section">
-      <div class="container">
-        <h2 class="section-title">Interior</h2>
-        <div class="slider" aria-roledescription="carousel" aria-label="Store gallery" tabindex="0">
-          <button class="slider-btn prev" aria-label="Previous slide">‹</button>
-          <div class="slides" aria-live="polite">
-            <figure class="slide"><img src="drinks.jpg"   alt="Signature iced drinks lineup" loading="lazy" decoding="async"></figure>
-            <figure class="slide"><img src="branding.jpg" alt="Cubic³ packaging and brand items" loading="lazy" decoding="async"></figure>
-            <figure class="slide"><img src="handoff.jpg"  alt="Barista handing a drink" loading="lazy" decoding="async"></figure>
-          </div>
-          <button class="slider-btn next" aria-label="Next slide">›</button>
-        </div>
-      </div>
-    </section>
-
-    <section id="video" class="section">
-      <div class="container">
-        <h2 class="section-title">A Coffee Journey</h2>
-        <video class="video" controls playsinline preload="metadata" poster="drinks.jpg">
-          <source src="coffee.mp4" type="video/mp4">
-          Your browser does not support the video tag.
-        </video>
-      </div>
-    </section>
-
-    <section id="contact" class="section">
-      <div class="container">
-        <h2 class="section-title">Contact</h2>
-        <p>Address: <a href="https://maps.google.com/?q=233 S Wacker Dr, Chicago, IL" target="_blank" rel="noopener">233 S Wacker Dr, Chicago, IL</a></p>
-        <p>Phone: <a href="tel:0000000000">000-000-0000</a></p>
-        <ul class="social">
-          <li><a href="#" aria-label="GitHub">
-            <svg viewBox="0 0 24 24" class="icon"><path d="M12 .5a11.5 11.5 0 0 0-3.64 22.41c.58.11.79-.25.79-.56 0-.27-.01-1.16-.02-2.1-3.2.7-3.88-1.37-3.88-1.37-.53-1.34-1.3-1.7-1.3-1.7-1.06-.73.08-.72.08-.72 1.18.08 1.81 1.22 1.81 1.22 1.04 1.78 2.72 1.27 3.39.97.11-.76.41-1.27.74-1.56-2.55-.29-5.23-1.28-5.23-5.71 0-1.26.45-2.29 1.2-3.1-.12-.29-.52-1.46.11-3.04 0 0 .98-.31 3.2 1.18a11.1 11.1 0 0 1 5.83 0c2.22-1.49 3.2-1.18 3.2-1.18.63 1.58.23 2.75.11 3.04.75.81 1.2 1.84 1.2 3.1 0 4.44-2.68 5.41-5.24 5.7.42.36.79 1.07.79 2.16 0 1.56-.01 2.82-.01 3.2 0 .31.21.68.8.56A11.5 11.5 0 0 0 12 .5z"/></svg>
-          </a></li>
-          <li><a href="#" aria-label="LinkedIn">
-            <svg viewBox="0 0 24 24" class="icon"><path d="M4.98 3.5A2.5 2.5 0 1 1 5 8.5 2.5 2.5 0 0 1 4.98 3.5zM3 9h4v12H3zm7 0h3.8v1.7h.05c.53-.95 1.83-1.95 3.77-1.95 4.03 0 4.77 2.65 4.77 6.1V21H18v-4.9c0-1.17-.02-2.67-1.63-2.67-1.64 0-1.89 1.28-1.89 2.58V21H10z"/></svg>
-          </a></li>
-          <li><a href="#" aria-label="X">
-            <svg viewBox="0 0 24 24" class="icon"><path d="M18.244 2H21l-6.45 7.37L22 22h-6.9l-4.54-5.94L4.6 22H2l6.93-7.92L2 2h6.9l4.12 5.39L18.244 2Zm-2.42 18h1.34L8.27 4H6.86l8.964 16Z"/></svg>
-          </a></li>
-        </ul>
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer"><div class="container">© <span id="y"></span> Cubic³ Coffee</div></footer>
-
-  <section id="modal-hours" class="modal" hidden>
-    <div class="dialog" role="dialog" aria-modal="true" aria-labelledby="hours-title">
-      <button class="close" data-close aria-label="Close">×</button>
-      <h3 id="hours-title">Store Hours</h3>
-      <p>Mon–Fri 8:00–18:00</p><p>Sat–Sun 9:00–19:00</p>
+  <section id="about" class="section section--pad">
+    <div class="container">
+      <h2 class="section__title">About</h2>
+      <p class="section__lead">We source single-origin beans and roast on site. Our space is designed for reading, conversation and moments of quiet between sips.</p>
     </div>
   </section>
+
+  <section id="menu" class="section section--pad section--alt">
+    <div class="container">
+      <h2 class="section__title">Menu</h2>
+      <div class="grid-3">
+        <div class="card">
+          <h3>Espresso Bar</h3>
+          <ul class="list">
+            <li>Espresso — 3.0</li>
+            <li>Americano — 3.5</li>
+            <li>Cappuccino — 4.5</li>
+            <li>Flat White — 4.8</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Signature</h3>
+          <ul class="list">
+            <li>Sea-salt Caramel Latte — 5.5</li>
+            <li>Orange Mocha — 5.8</li>
+            <li>Honey Lavender — 5.6</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Bites</h3>
+          <ul class="list">
+            <li>Almond Croissant — 4.2</li>
+            <li>Banana Bread — 3.8</li>
+            <li>Granola Yogurt — 4.9</li>
+          </ul>
+        </div>
+      </div>
+      <div class="center mt-24">
+        <button class="btn" data-open-modal="hours">View Store Hours</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--fixedbg">
+    <div class="container center">
+      <h2 class="section__title invert">Slow down. Smell the coffee.</h2>
+    </div>
+  </section>
+
+  <section id="gallery" class="section section--pad">
+    <div class="container">
+      <h2 class="section__title">Gallery</h2>
+      <div class="carousel" data-carousel>
+        <button class="carousel__ctrl prev" aria-label="Previous slide" data-prev>&lsaquo;</button>
+        <div class="carousel__viewport" data-viewport>
+          <div class="carousel__track" data-track>
+            <div class="carousel__slide"><img src="assets/img/slide1.jpg" alt="Pour over" /></div>
+            <div class="carousel__slide"><img src="assets/img/slide2.jpg" alt="Espresso shot" /></div>
+            <div class="carousel__slide"><img src="assets/img/slide3.jpg" alt="Croissant" /></div>
+          </div>
+        </div>
+        <button class="carousel__ctrl next" aria-label="Next slide" data-next>&rsaquo;</button>
+      </div>
+    </div>
+  </section>
+
+  <section id="video" class="section section--pad section--alt">
+    <div class="container">
+      <h2 class="section__title">A Coffee Journey</h2>
+      <video class="video" src="assets/video/beans.mp4" controls preload="metadata" poster="assets/img/video-poster.jpg"></video>
+    </div>
+  </section>
+
+  <section id="contact" class="section section--pad">
+    <div class="container">
+      <h2 class="section__title">Contact</h2>
+      <form class="form" action="#" method="post">
+        <div class="form__row">
+          <label for="name">Name</label>
+          <input id="name" name="name" type="text" required />
+        </div>
+        <div class="form__row">
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" required />
+        </div>
+        <div class="form__row">
+          <label for="msg">Message</label>
+          <textarea id="msg" name="msg" rows="5" required></textarea>
+        </div>
+        <button class="btn" type="submit">Send</button>
+      </form>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <small>© <span id="year"></span> Café Nimbus</small>
+      <div class="social">
+        <a class="icon icon--github" aria-label="GitHub" href="https://github.com/" target="_blank" rel="noreferrer"></a>
+        <a class="icon icon--instagram" aria-label="Instagram" href="https://www.instagram.com/" target="_blank" rel="noreferrer"></a>
+        <a class="icon icon--x" aria-label="X" href="https://x.com/" target="_blank" rel="noreferrer"></a>
+      </div>
+    </div>
+  </footer>
+
+  <div class="modal" id="modal-hours" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="modal__backdrop" data-close-modal></div>
+    <div class="modal__dialog" role="document">
+      <button class="modal__close" aria-label="Close" data-close-modal>&times;</button>
+      <h3>Store Hours</h3>
+      <ul class="list">
+        <li>Mon–Fri: 7:30am – 7:00pm</li>
+        <li>Sat: 8:00am – 8:00pm</li>
+        <li>Sun: 8:30am – 6:00pm</li>
+      </ul>
+    </div>
+  </div>
+
+  <script src="assets/js/main.js" defer></script>
 </body>
 </html>
+
 
 
