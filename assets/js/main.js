@@ -80,10 +80,5 @@
     m.addEventListener('click', e => { if (e.target === m) m.hidden = true; });
   });
 
-  const yearEl = document.getElementById('y');
-  if (yearEl) yearEl.textContent = new Date().getFullYear();
+  document.getElementById('y').textContent = new Date().getFullYear();
 })();
-
-
-
-
