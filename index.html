@@ -4,6 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Café Nimbus</title>
+  <meta name="description" content="Small-batch roasts and handcrafted drinks. A cozy single-page café site with smooth scrolling, carousel, modal, and responsive layout." />
+  <link rel="preload" as="image" href="branding.jpg" />
   <link rel="stylesheet" href="assets/styles.css" />
 </head>
 <body>
@@ -13,15 +15,18 @@
       <p class="hero__tag animate-fade">Small-batch roasts • Handcrafted drinks</p>
       <div class="hero__cta">
         <a href="#menu" class="btn">Explore Menu</a>
-        <button class="btn btn--ghost" data-open-modal="hours">Store Hours</button>
+        <button class="btn btn--ghost" data-open-modal="hours" aria-haspopup="dialog" aria-controls="modal-hours">Store Hours</button>
       </div>
     </div>
   </header>
 
-  <nav id="topnav" class="nav">
+  <nav id="topnav" class="nav" aria-label="Primary">
     <div class="nav__inner">
       <a class="nav__brand" href="#home">Nimbus</a>
-      <ul class="nav__links">
+      <button class="nav__toggle" aria-expanded="false" aria-controls="navlinks" aria-label="Toggle menu">
+        <span class="nav__bar"></span><span class="nav__bar"></span><span class="nav__bar"></span>
+      </button>
+      <ul id="navlinks" class="nav__links">
         <li><a href="#home" data-link>Home</a></li>
         <li><a href="#about" data-link>About</a></li>
         <li><a href="#menu" data-link>Menu</a></li>
@@ -70,48 +75,49 @@
         </div>
       </div>
       <div class="center mt-24">
-        <button class="btn" data-open-modal="hours">View Store Hours</button>
+        <button class="btn" data-open-modal="hours" aria-haspopup="dialog" aria-controls="modal-hours">View Store Hours</button>
       </div>
     </div>
   </section>
 
-  <section class="section section--fixedbg">
+  <section class="section section--fixedbg" aria-label="Slogan">
     <div class="container center">
       <h2 class="section__title invert">Slow down. Smell the coffee.</h2>
     </div>
   </section>
 
-  <section id="gallery" class="section section--pad">
+  <section id="gallery" class="section section--pad" aria-label="Interior gallery">
     <div class="container">
       <h2 class="section__title">Gallery</h2>
       <div class="carousel" data-carousel>
         <button class="carousel__ctrl prev" aria-label="Previous slide" data-prev>&lsaquo;</button>
         <div class="carousel__viewport" data-viewport>
           <div class="carousel__track" data-track>
-            <div class="carousel__slide"><img src="bar.jpg" alt="Pour over" /></div>
-            <div class="carousel__slide"><img src="drinks.jpg" alt="Drinks" /></div>
-            <div class="carousel__slide"><img src="machine.jpg" alt="Machine" /></div>
+            <div class="carousel__slide"><img src="bar.jpg" alt="Bar counter" loading="lazy" decoding="async" /></div>
+            <div class="carousel__slide"><img src="drinks.jpg" alt="Drinks" loading="lazy" decoding="async" /></div>
+            <div class="carousel__slide"><img src="machine.jpg" alt="Espresso machine" loading="lazy" decoding="async" /></div>
           </div>
         </div>
         <button class="carousel__ctrl next" aria-label="Next slide" data-next>&rsaquo;</button>
       </div>
+      <div class="dots" role="tablist" aria-label="Gallery dots"></div>
     </div>
   </section>
 
-  <section id="video" class="section section--pad section--alt">
+  <section id="video" class="section section--pad section--alt" aria-label="Video">
     <div class="container">
       <h2 class="section__title">A Coffee Journey</h2>
       <video class="video" src="coffee.mp4" controls preload="metadata" poster="entry.jpg"></video>
     </div>
   </section>
 
-  <section id="contact" class="section section--pad">
+  <section id="contact" class="section section--pad" aria-label="Contact form">
     <div class="container">
       <h2 class="section__title">Contact</h2>
-      <form class="form" action="#" method="post">
+      <form class="form" action="#" method="post" novalidate>
         <div class="form__row">
           <label for="name">Name</label>
-          <input id="name" name="name" type="text" required />
+          <input id="name" name="name" type="text" required minlength="2" />
         </div>
         <div class="form__row">
           <label for="email">Email</label>
@@ -119,9 +125,10 @@
         </div>
         <div class="form__row">
           <label for="msg">Message</label>
-          <textarea id="msg" name="msg" rows="5" required></textarea>
+          <textarea id="msg" name="msg" rows="5" required minlength="5"></textarea>
         </div>
         <button class="btn" type="submit">Send</button>
+        <p class="form__hint" aria-live="polite"></p>
       </form>
     </div>
   </section>
@@ -149,6 +156,8 @@
       </ul>
     </div>
   </div>
+
+  <button id="totop" class="totop" aria-label="Back to top">↑</button>
 
   <script src="assets/main.js" defer></script>
 </body>
