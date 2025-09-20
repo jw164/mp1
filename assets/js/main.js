@@ -1,10 +1,21 @@
 (() => {
   const header = document.querySelector('.site-header');
+  const progress = document.querySelector('.reading-progress span');
+
+  const setProgress = () => {
+    const h = document.documentElement;
+    const max = h.scrollHeight - h.clientHeight;
+    const pct = max > 0 ? (window.scrollY / max) * 100 : 0;
+    if (progress) progress.style.width = pct + '%';
+  };
+
   const onScrollResize = () => {
     if (window.scrollY > 8) header.classList.add('shrink'); else header.classList.remove('shrink');
+    setProgress();
   };
   onScrollResize();
   window.addEventListener('scroll', onScrollResize);
+  window.addEventListener('resize', onScrollResize);
 
   document.querySelectorAll('a[href^="#"]').forEach(a => {
     a.addEventListener('click', e => {
@@ -34,6 +45,7 @@
   sections.forEach(s => io.observe(s));
 
   const slider = document.querySelector('.slider');
+  const prefersReduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   if (slider) {
     const track = slider.querySelector('.slides');
     const slides = [...slider.querySelectorAll('.slide')];
@@ -44,9 +56,12 @@
     };
     slider.querySelector('.prev').addEventListener('click', () => go(i - 1));
     slider.querySelector('.next').addEventListener('click', () => go(i + 1));
-    let t = setInterval(() => go(i + 1), 4500);
-    slider.addEventListener('mouseenter', () => clearInterval(t));
-    slider.addEventListener('mouseleave', () => t = setInterval(() => go(i + 1), 4500));
+    let t = null;
+    if (!prefersReduce) {
+      t = setInterval(() => go(i + 1), 4500);
+      slider.addEventListener('mouseenter', () => clearInterval(t));
+      slider.addEventListener('mouseleave', () => t = setInterval(() => go(i + 1), 4500));
+    }
   }
 
   document.querySelectorAll('[data-open]').forEach(btn => {
@@ -67,5 +82,4 @@
 
   document.getElementById('y').textContent = new Date().getFullYear();
 })();
-
 
