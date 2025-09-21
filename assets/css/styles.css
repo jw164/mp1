@@ -21,6 +21,8 @@ img{max-width:100%;height:auto;display:block}
 .container{max-width:1200px;margin:0 auto;padding:0 20px}
 .btn{display:inline-block;background:var(--accent);color:#fff;padding:12px 18px;border-radius:999px;text-decoration:none;font-weight:700;transition:transform .15s ease,box-shadow .15s ease,background .15s ease}
 .btn:hover{transform:translateY(-1px);box-shadow:0 6px 16px rgba(0,0,0,.12);background:var(--accent-2)}
+.btn:active{transform:translateY(0) scale(.99)}
+.btn:focus-visible{outline:3px solid var(--accent-2);outline-offset:2px}
 
 .site-header{position:sticky;top:0;z-index:10;border-bottom:1px solid var(--border);backdrop-filter:blur(6px);background:var(--glass);transition:all .25s ease}
 .nav{display:flex;align-items:center;justify-content:space-between;height:80px}
@@ -41,8 +43,11 @@ nav a:hover,nav a.active{color:var(--accent)}
 .center-stack{display:grid;place-items:center}
 .quote{color:#fff;text-transform:uppercase;letter-spacing:.25em;background:rgba(0,0,0,.35);padding:10px 16px;border-radius:999px}
 
-.columns{columns:3 280px;column-gap:24px}
+.columns{columns:3 280px;column-gap:28px}
+.columns p{margin:0 0 10px;break-inside:avoid;padding-left:2px}
 .cta-wrap{text-align:center;margin-top:18px}
+
+#menu .container{max-width:900px}
 
 .parallax{min-height:56vh;background:url("../../beans.jpg") center/cover fixed no-repeat;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
 
@@ -78,7 +83,18 @@ nav a:hover,nav a.active{color:var(--accent)}
 .about-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:24px;align-items:center}
 .about-grid img{border-radius:14px;box-shadow:var(--shadow-soft);aspect-ratio:4/5;object-fit:cover}
 @media (max-width:900px){.about-grid{grid-template-columns:1fr}}
-@media (max-width:768px){.nav{height:64px}.section{padding:56px 0}.columns{columns:1}}
+
+@media (max-width:768px){
+  .nav{height:64px}
+  .section{padding:56px 0}
+  .columns{columns:1}
+  .columns p{font-size:1.015rem;line-height:1.7}
+}
+
+@media (max-width:480px){
+  .columns p{font-size:.98rem;line-height:1.75}
+  #menu .container{max-width:92%}
+}
 
 @media (prefers-color-scheme:dark){
   :root{--bg:#0F0E0D;--fg:#ECE6DF;--muted:#B8B2AB;--glass:rgba(20,18,17,.78);--border:rgba(255,255,255,.08);--shadow:0 8px 28px rgba(0,0,0,.45);--shadow-soft:0 10px 30px rgba(0,0,0,.55)}
