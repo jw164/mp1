@@ -9,6 +9,7 @@
   <meta property="og:description" content="Bright, clean, balanced coffee.">
   <meta property="og:type" content="website">
   <meta property="og:image" content="drinks.jpg">
+  <link rel="icon" href="branding.jpg">
   <link href="assets/css/styles.css" rel="stylesheet">
   <script src="assets/js/main.js" defer></script>
 </head>
@@ -36,7 +37,10 @@
         <h1 class="section-title">Cubic³ Coffee · Chicago</h1>
         <p class="lead">Bright, clean, balanced coffee. From bean to cup.</p>
         <a class="btn" href="#menu">Order Now</a>
-        <img src="minibus.jpg" alt="Coffee minibus with Cubic³ branding" class="hero-img" loading="eager" decoding="async">
+        <!-- 加上宽高，减少 CLS -->
+        <img src="minibus.jpg" alt="Coffee minibus with Cubic³ branding"
+             class="hero-img" loading="eager" decoding="async"
+             width="1920" height="1080">
       </div>
     </section>
 
@@ -47,7 +51,8 @@
           <p>Cubic³ Coffee focuses on bright, clean, balanced cups. Beans are roasted fresh and extracted on precision equipment.</p>
           <p>We keep things minimal: fast service, clear flavors, and prices around $3.00. Espresso, fruit-forward signatures, and cold brew are our core lineup.</p>
         </div>
-        <img src="handoff.jpg" alt="Passing a finished drink to the guest" loading="lazy" decoding="async">
+        <img src="handoff.jpg" alt="Passing a finished drink to the guest"
+             loading="lazy" decoding="async" width="1280" height="1600">
       </div>
     </section>
 
@@ -75,9 +80,9 @@
         <div class="slider" aria-roledescription="carousel" aria-label="Store gallery" tabindex="0">
           <button class="slider-btn prev" aria-label="Previous slide">‹</button>
           <div class="slides" aria-live="polite">
-            <figure class="slide"><img src="drinks.jpg"   alt="Signature iced drinks lineup" loading="lazy" decoding="async"></figure>
-            <figure class="slide"><img src="branding.jpg" alt="Cubic³ packaging and brand items" loading="lazy" decoding="async"></figure>
-            <figure class="slide"><img src="handoff.jpg"  alt="Barista handing a drink" loading="lazy" decoding="async"></figure>
+            <figure class="slide"><img src="drinks.jpg"   alt="Signature iced drinks lineup" loading="lazy" decoding="async" width="1920" height="1080"></figure>
+            <figure class="slide"><img src="branding.jpg" alt="Cubic³ packaging and brand items" loading="lazy" decoding="async" width="1920" height="1080"></figure>
+            <figure class="slide"><img src="handoff.jpg"  alt="Barista handing a drink" loading="lazy" decoding="async" width="1280" height="1600"></figure>
           </div>
           <button class="slider-btn next" aria-label="Next slide">›</button>
         </div>
@@ -87,7 +92,7 @@
     <section id="video" class="section">
       <div class="container">
         <h2 class="section-title">A Coffee Journey</h2>
-        <video class="video" controls playsinline preload="metadata" poster="drinks.jpg">
+        <video class="video" controls playsinline preload="metadata" poster="drinks.jpg" width="1920" height="1080">
           <source src="coffee.mp4" type="video/mp4">
           Your browser does not support the video tag.
         </video>
@@ -117,7 +122,8 @@
   <footer class="site-footer"><div class="container">© <span id="y"></span> Cubic³ Coffee</div></footer>
 
   <section id="modal-hours" class="modal" hidden>
-    <div class="dialog" role="dialog" aria-modal="true" aria-labelledby="hours-title">
+    <!-- tabindex=-1：打开后先聚焦到该对话框 -->
+    <div class="dialog" tabindex="-1" role="dialog" aria-modal="true" aria-labelledby="hours-title">
       <button class="close" data-close aria-label="Close">×</button>
       <h3 id="hours-title">Store Hours</h3>
       <p>Mon–Fri 8:00–18:00</p><p>Sat–Sun 9:00–19:00</p>
@@ -125,6 +131,7 @@
   </section>
 </body>
 </html>
+
 
 
 
