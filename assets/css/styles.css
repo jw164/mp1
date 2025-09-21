@@ -35,6 +35,10 @@ nav a:hover,nav a.active{color:#2f81f7}
 .slider-btn:hover{background:rgba(0,0,0,.6)}
 .slider-btn.prev{left:12px}
 .slider-btn.next{right:12px}
+/* 新增：键盘/焦点可见样式 */
+.slider:focus{outline:3px solid #2f81f7;outline-offset:4px}
+.slider-btn:focus{outline:3px solid #2f81f7;outline-offset:2px}
+
 .modal[hidden]{display:none}
 .modal{position:fixed;inset:0;background:rgba(0,0,0,.45);display:grid;place-items:center;padding:20px}
 .dialog{background:#fff;color:#000;border-radius:14px;padding:24px;max-width:560px;width:min(92vw,560px);position:relative}
@@ -53,11 +57,14 @@ nav a:hover,nav a.active{color:#2f81f7}
   .section{padding:56px 0}
   .columns{columns:1}
 }
+/* 深色模式抛光：hover/active 的可读性更好 */
 @media (prefers-color-scheme:dark){
   body{background:#0b0f14;color:#e6edf3}
   .site-header{background:rgba(13,17,23,.76);border-bottom:1px solid rgba(255,255,255,.06)}
   nav a{color:#e6edf3}
+  nav a:hover,nav a.active{color:#7bb3ff}
   .site-footer{border-top:1px solid rgba(255,255,255,.06);color:#9aa6b2}
   .dialog{background:#0f141a;color:#e6edf3}
 }
+
 
