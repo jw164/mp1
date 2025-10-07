@@ -43,11 +43,20 @@ nav a:hover,nav a.active{color:var(--accent)}
 .center-stack{display:grid;place-items:center}
 .quote{color:#fff;text-transform:uppercase;letter-spacing:.25em;background:rgba(0,0,0,.35);padding:10px 16px;border-radius:999px}
 
+/* CSS3 animations */
+@keyframes fadeUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+@keyframes softAppear{from{opacity:0}to{opacity:1}}
+.hero .section-title{animation:fadeUp .6s ease .05s both}
+.hero .lead{animation:fadeUp .6s ease .15s both}
+@media (prefers-reduced-motion:reduce){.hero .section-title,.hero .lead,.columns p{animation:none}}
+
+/* Menu: Desktop 3 cols / Tablet 2 / Mobile 1 */
 .columns{display:grid;grid-template-columns:repeat(3,minmax(260px,1fr));gap:12px 24px}
-.columns p{margin:0;padding:12px 14px;background:#fff;border-radius:14px;box-shadow:0 8px 24px rgba(0,0,0,.06)}
 #menu .container{max-width:1200px}
 @media (max-width:1024px){.columns{grid-template-columns:repeat(2,minmax(240px,1fr))}}
 @media (max-width:768px){.columns{grid-template-columns:1fr}}
+.columns p{margin:0;padding:12px 14px;background:#fff;border-radius:14px;box-shadow:0 8px 24px rgba(0,0,0,.06);animation:softAppear .5s ease both}
+
 .cta-wrap{text-align:center;margin-top:18px}
 
 .parallax{min-height:56vh;background:url("../images/beans.jpg") center/cover fixed no-repeat;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
@@ -100,5 +109,4 @@ nav a:hover,nav a.active{color:var(--accent)}
   nav a:hover,nav a.active{color:#F0C08B}
   .dialog{background:#151310;color:var(--fg)}
 }
-
 
