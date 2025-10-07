@@ -43,25 +43,33 @@ nav a:hover,nav a.active{color:var(--accent)}
 .center-stack{display:grid;place-items:center}
 .quote{color:#fff;text-transform:uppercase;letter-spacing:.25em;background:rgba(0,0,0,.35);padding:10px 16px;border-radius:999px}
 
-.columns{columns:3 280px;column-gap:28px}
-.columns p{margin:0 0 10px;break-inside:avoid;padding-left:2px}
-.cta-wrap{text-align:center;margin-top:18px}
+/* ==== Menu 三列（评分项） ==== */
+.columns{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px 28px}
+.columns p{margin:0;padding:12px 14px;background:#fff;border-radius:14px;box-shadow:0 8px 24px rgba(0,0,0,.06)}
+@media (max-width:1024px){.columns{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:768px){.columns{grid-template-columns:1fr}}
 
+.cta-wrap{text-align:center;margin-top:18px}
 #menu .container{max-width:900px}
 
-.parallax{min-height:56vh;background:url("../../beans.jpg") center/cover fixed no-repeat;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+/* ==== Parallax 背景路径修正 ==== */
+.parallax{min-height:56vh;background:url("../images/beans.jpg") center/cover fixed no-repeat;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
 
+/* ==== Carousel ==== */
 .slider{position:relative;overflow:hidden;border-radius:14px;box-shadow:var(--shadow-soft)}
 .slides{display:flex;transition:transform .45s ease}
 .slide{min-width:100%}
-.slide img{aspect-ratio:16/9;object-fit:cover;border-radius:14px}
-.slider-btn{position:absolute;top:50%;transform:translateY(-50%);border:0;background:rgba(0,0,0,.46);color:#fff;width:44px;height:44px;border-radius:50%;cursor:pointer;display:grid;place-items:center;transition:background .15s ease}
-.slider-btn:hover{background:rgba(0,0,0,.6)}
-.slider-btn.prev{left:12px}
-.slider-btn.next{right:12px}
+.slide img{aspect-ratio:16/9;object-fit:cover;border-radius:14px;pointer-events:none;user-select:none}
+
+/* 左右整条 64px 点击区，避免被图片遮挡 */
+.slider-btn{position:absolute;top:0;bottom:0;width:64px;display:flex;align-items:center;justify-content:center;border:0;background:transparent;color:#fff;font-size:32px;cursor:pointer;z-index:5;opacity:.95;transition:opacity .15s ease}
+.slider-btn.prev{left:0;background:linear-gradient(to right,rgba(0,0,0,.25),transparent)}
+.slider-btn.next{right:0;background:linear-gradient(to left,rgba(0,0,0,.25),transparent)}
+.slider-btn:hover{opacity:1}
 .slider:focus{outline:3px solid var(--accent);outline-offset:4px}
 .slider-btn:focus{outline:3px solid var(--accent);outline-offset:2px}
 
+/* dots 可保留 */
 .dots{display:flex;gap:8px;justify-content:center;margin-top:12px}
 .dot{width:10px;height:10px;border-radius:999px;cursor:pointer;border:1px solid var(--accent);background:transparent;display:inline-block;transform:scale(.9);transition:transform .15s ease,background .15s ease}
 .dot:hover{transform:scale(1)}
@@ -87,12 +95,9 @@ nav a:hover,nav a.active{color:var(--accent)}
 @media (max-width:768px){
   .nav{height:64px}
   .section{padding:56px 0}
-  .columns{columns:1}
-  .columns p{font-size:1.015rem;line-height:1.7}
 }
 
 @media (max-width:480px){
-  .columns p{font-size:.98rem;line-height:1.75}
   #menu .container{max-width:92%}
 }
 
