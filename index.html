@@ -5,21 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Cubic³ Coffee | Chicago</title>
 
-  <!-- Meta -->
   <meta name="description" content="Bright, clean, balanced coffee. Cubic³ Coffee in Chicago.">
   <meta property="og:title" content="Cubic³ Coffee | Chicago">
   <meta property="og:description" content="Bright, clean, balanced coffee.">
   <meta property="og:type" content="website">
   <meta property="og:image" content="assets/images/drinks.jpg">
 
-  <!-- Styles / Script -->
-  <link href="assets/css/styles.css?v=5" rel="stylesheet">
-  <script src="assets/js/main.js?v=3" defer></script>
+  <link href="assets/css/styles.css?v=6" rel="stylesheet">
+  <script src="assets/js/main.js?v=4" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#hero">Skip to content</a>
 
-  <!-- Header -->
   <header class="site-header">
     <div class="container nav">
       <a class="brand" href="#hero" aria-label="Go to Home">Cubic³ Coffee</a>
@@ -36,7 +33,6 @@
   </header>
 
   <main>
-    <!-- Hero -->
     <section id="hero" class="section hero">
       <div class="hero-inner container">
         <h1 class="section-title">Cubic³ Coffee · Chicago</h1>
@@ -46,7 +42,6 @@
       </div>
     </section>
 
-    <!-- About -->
     <section id="about" class="section">
       <div class="container about-grid">
         <div>
@@ -58,14 +53,12 @@
       </div>
     </section>
 
-    <!-- Parallax tag line -->
     <section class="parallax section">
       <div class="container center-stack">
         <h3 class="quote">from bean to cup</h3>
       </div>
     </section>
 
-    <!-- Menu (3 columns desktop) -->
     <section id="menu" class="section">
       <div class="container">
         <h2 class="section-title">Menu</h2>
@@ -74,13 +67,10 @@
           <p>Peach Black Tea $3.20</p><p>Lemon Americano $3.20</p><p>Cold Brew $3.30</p>
           <p>Milk Tea $3.00</p><p>Matcha Latte $3.50</p><p>Chocolate $3.00</p>
         </div>
-        <div class="cta-wrap">
-          <button class="btn" data-open="modal-hours">Store Hours</button>
-        </div>
+        <div class="cta-wrap"><button class="btn" data-open="modal-hours">Store Hours</button></div>
       </div>
     </section>
 
-    <!-- Carousel -->
     <section id="carousel" class="section">
       <div class="container">
         <h2 class="section-title">Interior</h2>
@@ -96,18 +86,19 @@
       </div>
     </section>
 
-    <!-- Video -->
     <section id="video" class="section">
       <div class="container">
         <h2 class="section-title">A Coffee Journey</h2>
-        <video class="video" controls playsinline preload="metadata" poster="assets/images/drinks.jpg">
-          <source src="assets/images/coffee.mp4" type="video/mp4">
+        <video id="coffeeVideo" class="video" controls playsinline preload="metadata" poster="assets/images/drinks.jpg">
+          <source src="assets/images/coffee.mp4?v=3" type="video/mp4">
           Your browser does not support the video tag.
         </video>
+        <p id="videoFallback" style="text-align:center;margin-top:8px;display:none;">
+          If the video doesn't start, <a href="assets/images/coffee.mp4?v=3" target="_blank" rel="noopener">open it directly</a>.
+        </p>
       </div>
     </section>
 
-    <!-- Contact -->
     <section id="contact" class="section">
       <div class="container">
         <h2 class="section-title">Contact</h2>
@@ -128,21 +119,17 @@
     </section>
   </main>
 
-  <!-- Footer -->
-  <footer class="site-footer">
-    <div class="container">© <span id="y"></span> Cubic³ Coffee</div>
-  </footer>
+  <footer class="site-footer"><div class="container">© <span id="y"></span> Cubic³ Coffee</div></footer>
 
-  <!-- Modal -->
   <section id="modal-hours" class="modal" hidden>
-    <div class="dialog" role="dialog" aria-modal="true" aria-labelledby="hours-title">
+    <div class="dialog" role="dialog" aria-modal="true" aria-labelledby="hours-title" tabindex="-1">
       <button class="close" data-close aria-label="Close">×</button>
       <h3 id="hours-title">Store Hours</h3>
-      <p>Mon–Fri 8:00–18:00</p>
-      <p>Sat–Sun 9:00–19:00</p>
+      <p>Mon–Fri 8:00–18:00</p><p>Sat–Sun 9:00–19:00</p>
     </div>
   </section>
 </body>
 </html>
+
 
 
